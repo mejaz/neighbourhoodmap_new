@@ -11,7 +11,8 @@ Configuration:
 3. escape-string-regexp - 1.0.5
 4. Register in Google developers to generate a key.
 5. Register in FourSquares APIs to generate the Client_ID and Client_Secret
-6. Update the App.js file with the Google key, FourSquare Client_ID and Client_Secret
+6. Update the NeighbourhoodList.js file with the FourSquare Client_ID and Client_Secret.
+7. Update the MyFancyComponent.js file with the Google API key.
 
 Steps to launch the App:
 ------------------------
