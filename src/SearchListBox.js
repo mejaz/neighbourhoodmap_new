@@ -52,6 +52,7 @@ class SearchListBox extends Component {
 			<Row>
 				<Col md={4} >
 	        <input 
+	        	autoFocus
 	        	className='search-text' 
 	        	type='text' 
 	        	placeholder='Type here...'
