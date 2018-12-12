@@ -1,8 +1,8 @@
 import React, { Fragment } from "react"
 import InfoBoxMarker from './InfoBoxMarker'
-import { compose, withProps } from "recompose"
+import { compose, withProps, lifecycle } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap} from "react-google-maps"
-
+import ErrorBoundary from './ErrorBoundary'
 
 const MyMapComponent = compose(
   withProps({
@@ -13,15 +13,14 @@ const MyMapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap,
-)((props) => 
-	<Fragment>
+)((props) =>
 	  <GoogleMap
 	    defaultZoom={12}
 	    defaultCenter={{
 	      lat: 28.5616,
 	      lng: 77.2687
 	    }}
-		 >
+		>
 			{props.isMarkerShown && props.venues.length > 0 &&
 				props.venues.length != null &&
 		    	props.venues.map((r) => (
@@ -50,7 +49,6 @@ const MyMapComponent = compose(
 				)
 			}
 	  </GoogleMap>
-  </Fragment>
 )
 
 class MyFancyComponent extends React.PureComponent {
@@ -60,13 +58,15 @@ class MyFancyComponent extends React.PureComponent {
 
   render() {
     return (
-      <MyMapComponent
-        isMarkerShown={this.state.isMarkerShown}
-        onMarkerClick={this.handleMarkerClick}
-        venues={this.props.venues}
-        displayInfo={this.props.displayInfo}
-        showInfoVenue={this.props.showInfoVenue}
-      />
+        <ErrorBoundary>
+          <MyMapComponent
+            isMarkerShown={this.state.isMarkerShown}
+            onMarkerClick={this.handleMarkerClick}
+            venues={this.props.venues}
+            displayInfo={this.props.displayInfo}
+            showInfoVenue={this.props.showInfoVenue}
+          />
+        </ErrorBoundary>
     )
   }
 }

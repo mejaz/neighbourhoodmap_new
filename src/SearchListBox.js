@@ -14,6 +14,7 @@ class SearchListBox extends Component {
 		this.handleInput = this.handleInput.bind(this)
 		this.clearSearch = this.clearSearch.bind(this)
 		this.handleClick = this.handleClick.bind(this)
+		this.handleKeyPress = this.handleKeyPress.bind(this)
 	}
 
 	handleInput(e) {
@@ -38,8 +39,20 @@ class SearchListBox extends Component {
     })
   }	
 
+  handleKeyPress(event) {
+  	event.preventDefault()
+  	if (event.key === 'Enter' || event.which === 32) {
+	    let selValDetails = this.props.venues.filter((r) => r.id === event.target.getAttribute("value"))
+	    this.setState({
+	      value: event.target.getAttribute("value"),
+	      selectedLoc: selValDetails,
+	    })  		
+  	}
+  }
+
 	render() {
 
+		let i = 2
     let searchVenues
     if(this.state.searchText) {
       const match = new RegExp(escapeRegExp(this.state.searchText), 'i')
@@ -53,6 +66,7 @@ class SearchListBox extends Component {
 				<Col md={4} >
 	        <input 
 	        	autoFocus
+	        	tabIndex={1}
 	        	className='search-text' 
 	        	type='text' 
 	        	placeholder='Type here...'
@@ -60,9 +74,18 @@ class SearchListBox extends Component {
 	        	value={this.state.searchText}
 	        />
 	        <ul className='search-box list'>
-	          {searchVenues.map((r) => (
-	            <li key={r.id} value={r.id} onClick={this.handleClick}>{r.name}</li>
-	          )
+	          { 
+	          	searchVenues.map((r) => {
+		            return ( <li 
+		            	key={r.id} 
+		            	value={r.id} 
+		            	onClick={this.handleClick}
+		            	onKeyPress={this.handleKeyPress}
+		            	tabIndex={i++}
+		            >
+		            	{r.name}
+		            </li>) 
+	          	}
 	          )}          
 	        </ul>
 	      </Col>
