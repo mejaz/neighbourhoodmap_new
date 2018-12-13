@@ -74,7 +74,10 @@ class SearchListBox extends Component {
 	        	value={this.state.searchText}
 	        	aria-required={false}
 	        />
-	        <ul className='search-box list' role="list">
+	        <ul 
+	        	className='search-box list' 
+	        	role="list"
+	        >
 	          { 
 	          	searchVenues.map((r) => {
 		            return ( <li 

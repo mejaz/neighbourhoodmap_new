@@ -20,7 +20,7 @@ class NeighbourhoodList extends Component {
     let myLat = 28.5616
     let myLng = 77.2687
     var url = "https://api.foursquare.com/v2/venues/search?client_id=" + clientId + "&client_secret=" + clientSecret + "&v=20181201&ll=" + myLat + "," + myLng + "&v=20181201&query=restaurant"
-    var googleMapURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBPYmscV7S_fKralMKoEAryLRZVvQVL6f8"
+    
    
     fetch(url)
       .then((response) => { 

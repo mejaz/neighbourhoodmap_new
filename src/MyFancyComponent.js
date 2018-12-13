@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import InfoBoxMarker from './InfoBoxMarker'
-import { compose, withProps, lifecycle } from "recompose"
+import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap} from "react-google-maps"
 import ErrorBoundary from './ErrorBoundary'
 
