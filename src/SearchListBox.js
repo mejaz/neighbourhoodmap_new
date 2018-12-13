@@ -72,8 +72,9 @@ class SearchListBox extends Component {
 	        	placeholder='Type here...'
 	        	onChange={this.handleInput}
 	        	value={this.state.searchText}
+	        	aria-required={false}
 	        />
-	        <ul className='search-box list'>
+	        <ul className='search-box list' role="list">
 	          { 
 	          	searchVenues.map((r) => {
 		            return ( <li 
@@ -82,6 +83,7 @@ class SearchListBox extends Component {
 		            	onClick={this.handleClick}
 		            	onKeyPress={this.handleKeyPress}
 		            	tabIndex={i++}
+		            	role={"listitem"}
 		            >
 		            	{r.name}
 		            </li>) 

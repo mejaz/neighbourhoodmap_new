@@ -4,13 +4,13 @@ import { Marker, InfoWindow } from "react-google-maps"
 class InfoBoxMarker extends Component {
 	
 	constructor(props) {
-    super(props)  
-    this.state = {
-    	isOpen: false,
-    	animate: false
-    }
-    this.markerClick = this.markerClick.bind(this)
-  }
+	  super(props)  
+	  this.state = {
+	  	isOpen: false,
+	  	animate: false
+	  }
+	  this.markerClick = this.markerClick.bind(this)
+	}
 
   componentWillReceiveProps(nextProps) {
   	this.setState({
