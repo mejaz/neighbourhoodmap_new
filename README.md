@@ -30,7 +30,7 @@ Steps to build/deploy the app in Production (Heroku here):
 4. `git init`
 5. `git add .`
 6. `git commit -m “initial commit”`
-7. `heroku create (You should see two links after running this command. Copy the second one)`
+7. `heroku create` (You should see two links after running this command. Copy the second one)
 8. `git remote add heroku PASTE THE LINK YOU JUST COPIED`
 9. `git push heroku master`
 10. `heroku open`
