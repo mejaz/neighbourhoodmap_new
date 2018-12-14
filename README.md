@@ -22,6 +22,18 @@ Steps to launch the App:
 4. Run the command - `yarn start`
 5. The NeighbourHoodMap application will start at local host port 3000 - http://127.0.0.1:3000
 
+Steps to build/deploy the app in Production (Heroku here):
+--------------------------------------------
+1. Clone this repo to a local directory/folder.
+2. Open terminal/cmd and type `yarn build`, this command will create a build for production deployment.
+3. Type `heroku login` (Enter your Heroku credentials). You can signup here (https://signup.heroku.com/login)
+4. `git init`
+5. `git add .`
+6. `git commit -m “initial commit”`
+7. `heroku create` (You should see two links after running this command. Copy the second one)
+8. `git remote add heroku <PASTE THE LINK YOU JUST COPIED>`
+9. `git push heroku master`
+10. `heroku open`
 
 Contact me:
 -----------
