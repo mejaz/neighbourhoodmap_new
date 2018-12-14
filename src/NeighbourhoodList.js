@@ -31,7 +31,10 @@ class NeighbourhoodList extends Component {
         }
       })
       .then(r => this.setState({venues: r.response.venues}))
-      .catch((e) => alert("Error loading venues! Check you internet connection."))
+      .catch((e) => {
+        this.setState({venues: []})
+        alert("Error loading venues! Check you internet connection.")
+      })
   }
 
   handleClick(event) {

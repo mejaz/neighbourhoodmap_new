@@ -12,7 +12,7 @@ class ErrorBoundary extends Component {
       error: error,
       errorInfo: errorInfo
     })
-    alert('error')
+    alert('Error loading map! Please check internet connection.')
     // You can also log error messages to an error reporting service here
   }
   
