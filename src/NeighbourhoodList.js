@@ -33,7 +33,7 @@ class NeighbourhoodList extends Component {
       .then(r => this.setState({venues: r.response.venues}))
       .catch((e) => {
         this.setState({venues: []})
-        alert("Error loading venues! Check you internet connection.")
+        alert("Error loading venues!")
       })
   }
 
